@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+**Читати іншими мовами: [Русский](README.ru.md), [Українська](README.md).**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Критерії прийому
 
-## Available Scripts
+- Створено репозиторій `goit-react-hw-01-components`
+- Компоненти всіх завдань рендеряться на одній сторінці, всередині загального
+  контейнера - кореневого компонента `<App>`
+- При здачі домашньої роботи є два посилання: на вихідні файли і робочу сторінку
+  на `GitHub pages`
+- При відвідуванні робочої сторінки (GitHub pages) завдання, в консолі немає
+  помилок і попереджень
+- Для кожного компонента є окрема папка з файлом React-компонента і файлом
+  стилів
+- Для компонентів описані `propTypes`, і де необхідно, `defaultProps`
+- Все що компонент очікує у вигляді пропсів, передається йому при виклику
+- Імена компонентів зрозумілі, описові
+- JS-код ччистий і зрозумілий, використовується `Prettier`
+- Стилізація робиться тільки `SASS`, `CSS-модулями` або `Styled Components`,
+  тому класи в результуючому DOM можуть відрізнятися від прикладів.
+- Для стилізації досить позиціонування і розміри наближені до макету.
+  Компоненти, в першу чергу, повинні працювати, а вже потім бути красиві,
+  виділяй 20% часу на стилізацію і 80% на JS.
 
-In the project directory, you can run:
+## Задания
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Завдання 1 - Профіль соціальної мережі](./tasks/social-profile/README.md)
+- [Завдання 2 - Секція статистики](./tasks/statistics/README.md)
+- [Завдання 3 - Список друзів](./tasks/friend-list/README.md)
+- [Завдання 4 - Історія транзакцій](./tasks/transaction-history/README.md)
