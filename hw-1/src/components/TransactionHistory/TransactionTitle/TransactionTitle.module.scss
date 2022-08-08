@@ -1,0 +1,19 @@
+.title {
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #30d5c8;
+}
+
+.name {
+  padding: 5px;
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
+
+  @media screen and (min-width: 480px) {
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 15px;
+  }
+}

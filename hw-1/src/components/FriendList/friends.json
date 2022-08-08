@@ -1,0 +1,32 @@
+[
+  {
+    "avatar": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/1546453/original/fiverrpic.jpg",
+    "name": "Mango",
+    "isOnline": true,
+    "id": 1812
+  },
+  {
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqCjBHXdq1ftboJKF7jAtI6O8E25oDeeN2qRe4vVYFznKe4upM804a8YF6bhKLpJwcKVA&usqp=CAU",
+    "name": "Kiwi",
+    "isOnline": false,
+    "id": 1137
+  },
+  {
+    "avatar": "https://www.cnet.com/a/img/liJ9UZA87zs1viJiuEfVnL7YYfw=/940x0/2020/05/18/5bac8cc1-4bd5-4496-a8c3-66a6cd12d0cb/fb-avatar-2.jpg",
+    "name": "Ajax",
+    "isOnline": true,
+    "id": 1213
+  },
+  {
+    "avatar": "https://assets-global.website-files.com/5e694412bc13e11344366aae/5ec44f369d42a433d17ea223_Pauls-Bitmoji-300x285.jpeg",
+    "name": "Jay",
+    "isOnline": true,
+    "id": 1714
+  },
+  {
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGOIY_xfOWs3j5IVU6oSrWaID4BopWqYAV1hQ9pK4WO_uXc68fLuQfZWjF3epxPVpgEU8&usqp=CAU",
+    "name": "Poly",
+    "isOnline": false,
+    "id": 1284
+  }
+]

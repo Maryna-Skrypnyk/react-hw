@@ -1,13 +1,13 @@
-import ContainerProfile from './ContainerProfile';
+import Section from '../Section';
 import Description from './Description';
 import StatsList from './StatsList';
 
 const Profile = ({ stats, avatar, tag, name, location }) => {
   return (
-    <ContainerProfile>
+    <Section classBox="profile">
       <Description avatar={avatar} tag={tag} name={name} location={location} />
       <StatsList stats={stats} />
-    </ContainerProfile>
+    </Section>
   );
 };
 
