@@ -16,5 +16,6 @@
 
 ## Задания
 
-- [Задание - Виджет отзывов](./tasks/feedback/README.ru.md)
-<!-- - [Задание 2 - Телефонная книга](./tasks/phonebook/README.ru.md) -->
+<!-- - [Задание 1 - Виджет отзывов](./tasks/feedback/README.ru.md) -->
+
+- [Задание - Телефонная книга](./tasks/phonebook/README.ru.md)

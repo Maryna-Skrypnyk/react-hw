@@ -16,5 +16,5 @@
 
 ## Завдання
 
-- [Завдання 1 - Віджет відгуків](./tasks/feedback/README.md)
-- [Завдання 2 - Телефонна книга](./tasks/phonebook/README.md)
+- [Завдання - Віджет відгуків](./tasks/feedback/README.md)
+<!-- - [Завдання 2 - Телефонна книга](./tasks/phonebook/README.md) -->
