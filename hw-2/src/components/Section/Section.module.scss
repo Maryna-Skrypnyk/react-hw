@@ -1,0 +1,33 @@
+.section {
+  width: 300px;
+  margin: 30px auto;
+  padding: 24px;
+  background-color: rgba(118, 151, 148, 0.9);
+  border-radius: 20px;
+
+  @media screen and (min-width: 480px) {
+    width: 460px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 680px;
+  }
+}
+
+.title {
+  padding: 20px;
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #fff;
+  color: rgb(118, 151, 148);
+
+  @media screen and (min-width: 480px) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+  }
+}
