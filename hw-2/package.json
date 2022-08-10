@@ -2,7 +2,7 @@
   "name": "hw-2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://maryna-skrypnyk.github.io/react-hw",
+  "homepage": "https://maryna-skrypnyk.github.io/react-hw/hw-2",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
