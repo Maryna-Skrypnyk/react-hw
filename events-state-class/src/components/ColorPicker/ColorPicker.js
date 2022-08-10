@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import './ColorPicker.css';
 
 class ColorPicker extends Component {
+  static propTypes = {
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        color: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  };
   state = {
     activeOptionIdx: 0,
   };
