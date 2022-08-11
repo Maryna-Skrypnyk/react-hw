@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/react-hw/hw-2/static/css/main.151e433b.css",
-    "main.js": "/react-hw/hw-2/static/js/main.6a5ce4bb.js",
-    "index.html": "/react-hw/hw-2/index.html",
-    "main.151e433b.css.map": "/react-hw/hw-2/static/css/main.151e433b.css.map",
-    "main.6a5ce4bb.js.map": "/react-hw/hw-2/static/js/main.6a5ce4bb.js.map"
+    "main.css": "/react-hw/hw-2-phonebook/static/css/main.9f5fbbd3.css",
+    "main.js": "/react-hw/hw-2-phonebook/static/js/main.2f33fdfe.js",
+    "static/media/Circe-Bold.woff": "/react-hw/hw-2-phonebook/static/media/Circe-Bold.30401a85fd2d86b1c587.woff",
+    "static/media/Circe-Regular.woff": "/react-hw/hw-2-phonebook/static/media/Circe-Regular.0f1760c600b59a347aab.woff",
+    "static/media/Poppins-Regular.woff": "/react-hw/hw-2-phonebook/static/media/Poppins-Regular.0cb0e08604d9c19c5c38.woff",
+    "static/media/Poppins-Bold.woff": "/react-hw/hw-2-phonebook/static/media/Poppins-Bold.34b194b50abc612625a4.woff",
+    "static/media/bg-y-b.jpg": "/react-hw/hw-2-phonebook/static/media/bg-y-b.3fdb7e52c4bd469c5fbe.jpg",
+    "index.html": "/react-hw/hw-2-phonebook/index.html",
+    "main.9f5fbbd3.css.map": "/react-hw/hw-2-phonebook/static/css/main.9f5fbbd3.css.map",
+    "main.2f33fdfe.js.map": "/react-hw/hw-2-phonebook/static/js/main.2f33fdfe.js.map"
   },
   "entrypoints": [
-    "static/css/main.151e433b.css",
-    "static/js/main.6a5ce4bb.js"
+    "static/css/main.9f5fbbd3.css",
+    "static/js/main.2f33fdfe.js"
   ]
 }
