@@ -11,10 +11,11 @@ body {
   // -moz-osx-font-smoothing: grayscale;
 
   font-family: $primary-font;
-  background-color: $primary-background-color;
+  background-color: $img-background-blue-color;
   // background-color: $secondary-background-color;
   background-image: url(../assets/images/bg-y-b.jpg);
   background-size: cover;
+
   color: $text-color;
   line-height: 1.5;
 }
