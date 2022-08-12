@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Container from './Container';
 import Title from './Title';
-import ContactForm from './ContactForm';
+import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 import { v4 as uuidv4 } from 'uuid';
@@ -91,7 +91,7 @@ class App extends Component {
   };
 
   render() {
-    const { filter, contacts } = this.state;
+    const { filter } = this.state;
 
     const visibleContacts = this.getVisibleContactsSortByName();
 
