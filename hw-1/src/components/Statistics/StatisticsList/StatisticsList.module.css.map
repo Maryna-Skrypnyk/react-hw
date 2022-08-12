@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,oCAAoC;EACpC,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM;EAClB,yBAAyB,EAAE,GAAG;EAC9B,0BAA0B,EAAE,GAAG;CAChC",
+    "sources": [
+        "StatisticsList.module.scss"
+    ],
+    "names": [],
+    "file": "StatisticsList.module.css"
+}

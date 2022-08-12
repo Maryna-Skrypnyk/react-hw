@@ -17,11 +17,26 @@ const colorPickerOptions = [
 class App extends Component {
   state = {
     todos: initialTodos,
+    filter: '',
   };
 
   deleteTodo = todoId => {
     this.setState(prevState => ({
       todos: prevState.todos.filter(todo => todo.id !== todoId),
+    }));
+  };
+
+  toggleCompleted = todoId => {
+    this.setState(prewState => ({
+      todos: prewState.todos.map(todo => {
+        if (todo.id === todoId) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      }),
     }));
   };
 
@@ -47,7 +62,11 @@ class App extends Component {
           <p>Кількість виконаних: {completedTodoCount}</p>
         </div>
 
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        <TodoList
+          todos={todos}
+          onDeleteTodo={this.deleteTodo}
+          onToggleCompleted={this.toggleCompleted}
+        />
       </>
     );
   }

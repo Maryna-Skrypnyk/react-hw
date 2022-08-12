@@ -1,0 +1,42 @@
+.section {
+  width: 300px;
+  margin: 30px auto;
+  padding: 24px;
+  background-color: rgba(118, 151, 148, 0.9);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 480px) {
+  .section {
+    width: 460px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    width: 680px;
+  }
+}
+
+.title {
+  padding: 20px;
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #fff;
+  color: #769794;
+}
+
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+}
+/*# sourceMappingURL=Section.module.css.map */

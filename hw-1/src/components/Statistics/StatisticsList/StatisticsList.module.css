@@ -1,0 +1,13 @@
+.statsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* justify-content: space-around; */
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  font-style: normal;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/*# sourceMappingURL=StatisticsList.module.css.map */

@@ -1,0 +1,26 @@
+.primary {
+  background: #fff;
+}
+
+.secondary {
+  background: #f7f7f7;
+}
+
+.data {
+  padding: 5px;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+}
+
+@media screen and (min-width: 480px) {
+  .data {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .data {
+    padding: 15px;
+  }
+}
+/*# sourceMappingURL=TransactionItem.module.css.map */
