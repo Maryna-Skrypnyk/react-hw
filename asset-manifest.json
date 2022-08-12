@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/react-hw/hw-2/static/css/main.151e433b.css",
-    "main.js": "/react-hw/hw-2/static/js/main.6a5ce4bb.js",
-    "index.html": "/react-hw/hw-2/index.html",
-    "main.151e433b.css.map": "/react-hw/hw-2/static/css/main.151e433b.css.map",
-    "main.6a5ce4bb.js.map": "/react-hw/hw-2/static/js/main.6a5ce4bb.js.map"
+    "main.css": "/react-hw/forms/static/css/main.073c9b0a.css",
+    "main.js": "/react-hw/forms/static/js/main.b744aeb8.js",
+    "static/js/787.5bd4efce.chunk.js": "/react-hw/forms/static/js/787.5bd4efce.chunk.js",
+    "static/media/logo.svg": "/react-hw/forms/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-hw/forms/index.html",
+    "main.073c9b0a.css.map": "/react-hw/forms/static/css/main.073c9b0a.css.map",
+    "main.b744aeb8.js.map": "/react-hw/forms/static/js/main.b744aeb8.js.map",
+    "787.5bd4efce.chunk.js.map": "/react-hw/forms/static/js/787.5bd4efce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.151e433b.css",
-    "static/js/main.6a5ce4bb.js"
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b744aeb8.js"
   ]
 }
