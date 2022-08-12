@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import Container from './Container';
 import Title from './Title';
-import ContactForm from './ContactForm';
+// import ContactForm from './ContactForm';
+import FormFormic from './FormFormic';
 import ContactList from './ContactList';
 import Filter from './Filter';
 import { v4 as uuidv4 } from 'uuid';
@@ -34,21 +35,21 @@ class App extends Component {
       return;
     }
 
-    if ((!name || name.trim() === '') && (!number || number.trim() === '')) {
-      makeToastWarn('Fill in the fields "Name" and "Number"', 'warn');
-      // alert('Fill in the fields "Name" and "Number"');
-      return;
-    }
+    // if ((!name || name.trim() === '') && (!number || number.trim() === '')) {
+    //   makeToastWarn('Fill in the fields "Name" and "Number"', 'warn');
+    //   // alert('Fill in the fields "Name" and "Number"');
+    //   return;
+    // }
 
-    if (!name || name.trim() === '') {
-      makeToastWarn('Field "Name" is empty', 'warn');
-      return;
-    }
+    // if (!name || name.trim() === '') {
+    //   makeToastWarn('Field "Name" is empty', 'warn');
+    //   return;
+    // }
 
-    if (!number || number.trim() === '') {
-      makeToastWarn('Field "Number" is empty', 'warn');
-      return;
-    }
+    // if (!number || number.trim() === '') {
+    //   makeToastWarn('Field "Number" is empty', 'warn');
+    //   return;
+    // }
 
     this.setState(({ contacts }) => ({ contacts: [contact, ...contacts] }));
   };
@@ -98,7 +99,8 @@ class App extends Component {
     return (
       <Container>
         <Title primaryTitle="Phonebook" />
-        <ContactForm onSubmit={this.addContact} />
+        {/* <ContactForm onSubmitForm={this.addContact} /> */}
+        <FormFormic onSubmitForm={this.addContact} />
         <Title secondaryTitle="Contacts" />
 
         <Filter value={filter} onChange={this.filterChange} />
