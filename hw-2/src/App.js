@@ -5,8 +5,6 @@ import Statistics from './components/Statistics';
 import FeedbackOptions from './components/FeedbackOptions';
 import { FEEDBACK_OPTIONS } from './data/options';
 
-import './App.css';
-
 const INITIAL_STATE = {
   good: 0,
   neutral: 0,
