@@ -8,8 +8,8 @@ const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
     {todos.map(({ id, text, completed }) => (
       <li
         key={id}
-        className={classNames(`${s.TodoList__item}`, {
-          'TodoList__item--completed': completed,
+        className={classNames(s['TodoList__item'], {
+          [s['TodoList__item--completed']]: completed,
         })}
       >
         <Todo
