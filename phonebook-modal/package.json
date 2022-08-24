@@ -2,7 +2,7 @@
   "name": "phonebook-modal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://maryna-skrypnyk.github.io/react-hw/phonebook-modal",
+  "homepage": "https://maryna-skrypnyk.github.io/react-hw/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
