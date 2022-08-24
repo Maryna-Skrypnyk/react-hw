@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/react-hw/hw-2-phonebook/static/css/main.4339cf5c.css",
-    "main.js": "/react-hw/hw-2-phonebook/static/js/main.94f6da73.js",
-    "static/media/Circe-Bold.woff": "/react-hw/hw-2-phonebook/static/media/Circe-Bold.30401a85fd2d86b1c587.woff",
-    "static/media/Circe-Regular.woff": "/react-hw/hw-2-phonebook/static/media/Circe-Regular.0f1760c600b59a347aab.woff",
-    "static/media/Poppins-Regular.woff": "/react-hw/hw-2-phonebook/static/media/Poppins-Regular.0cb0e08604d9c19c5c38.woff",
-    "static/media/Poppins-Bold.woff": "/react-hw/hw-2-phonebook/static/media/Poppins-Bold.34b194b50abc612625a4.woff",
-    "static/media/bg-y-b.jpg": "/react-hw/hw-2-phonebook/static/media/bg-y-b.3fdb7e52c4bd469c5fbe.jpg",
-    "index.html": "/react-hw/hw-2-phonebook/index.html",
-    "main.4339cf5c.css.map": "/react-hw/hw-2-phonebook/static/css/main.4339cf5c.css.map",
-    "main.94f6da73.js.map": "/react-hw/hw-2-phonebook/static/js/main.94f6da73.js.map"
+    "main.css": "/react-hw/phonebook-modal/static/css/main.bad1b90d.css",
+    "main.js": "/react-hw/phonebook-modal/static/js/main.36749388.js",
+    "static/media/Circe-Bold.woff": "/react-hw/phonebook-modal/static/media/Circe-Bold.30401a85fd2d86b1c587.woff",
+    "static/media/Circe-Regular.woff": "/react-hw/phonebook-modal/static/media/Circe-Regular.0f1760c600b59a347aab.woff",
+    "static/media/Poppins-Regular.woff": "/react-hw/phonebook-modal/static/media/Poppins-Regular.0cb0e08604d9c19c5c38.woff",
+    "static/media/Poppins-Bold.woff": "/react-hw/phonebook-modal/static/media/Poppins-Bold.34b194b50abc612625a4.woff",
+    "static/media/bg-y-b.jpg": "/react-hw/phonebook-modal/static/media/bg-y-b.3fdb7e52c4bd469c5fbe.jpg",
+    "index.html": "/react-hw/phonebook-modal/index.html",
+    "static/media/delete2.svg": "/react-hw/phonebook-modal/static/media/delete2.e4f8b5f0dafa9edf7af47a29a7430628.svg",
+    "static/media/close.svg": "/react-hw/phonebook-modal/static/media/close.21a4936cc55a86a68b4e6e11e5cb63ac.svg",
+    "static/media/add.svg": "/react-hw/phonebook-modal/static/media/add.b32f3a092015d7a228e03084a624cb0b.svg",
+    "main.bad1b90d.css.map": "/react-hw/phonebook-modal/static/css/main.bad1b90d.css.map",
+    "main.36749388.js.map": "/react-hw/phonebook-modal/static/js/main.36749388.js.map"
   },
   "entrypoints": [
-    "static/css/main.4339cf5c.css",
-    "static/js/main.94f6da73.js"
+    "static/css/main.bad1b90d.css",
+    "static/js/main.36749388.js"
   ]
 }
