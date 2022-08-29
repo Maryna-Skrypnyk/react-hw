@@ -14,4 +14,8 @@
 
 ## [todo](todo)
 
-## [phonebook-modal](phonebook-modal)
+## [phonebook-modal-localStorage](phonebook-modal)
+
+## [http-pokemon](http-pokemon)
+
+## [homework-3-image-finder](hw-3-image-finder)
