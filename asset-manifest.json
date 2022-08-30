@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-hw/static/css/main.2b9b5b2d.css",
-    "main.js": "/react-hw/static/js/main.f68b5c57.js",
+    "main.css": "/react-hw/static/css/main.6d38c0ab.css",
+    "main.js": "/react-hw/static/js/main.bcf37989.js",
     "static/media/Circe-Bold.woff": "/react-hw/static/media/Circe-Bold.30401a85fd2d86b1c587.woff",
     "static/media/Circe-Regular.woff": "/react-hw/static/media/Circe-Regular.0f1760c600b59a347aab.woff",
     "static/media/Poppins-Regular.woff": "/react-hw/static/media/Poppins-Regular.0cb0e08604d9c19c5c38.woff",
@@ -10,11 +10,11 @@
     "static/media/not-found.jpg": "/react-hw/static/media/not-found.6e728e80d2eeb7d5fe37.jpg",
     "index.html": "/react-hw/index.html",
     "static/media/close.svg": "/react-hw/static/media/close.21a4936cc55a86a68b4e6e11e5cb63ac.svg",
-    "main.2b9b5b2d.css.map": "/react-hw/static/css/main.2b9b5b2d.css.map",
-    "main.f68b5c57.js.map": "/react-hw/static/js/main.f68b5c57.js.map"
+    "main.6d38c0ab.css.map": "/react-hw/static/css/main.6d38c0ab.css.map",
+    "main.bcf37989.js.map": "/react-hw/static/js/main.bcf37989.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b9b5b2d.css",
-    "static/js/main.f68b5c57.js"
+    "static/css/main.6d38c0ab.css",
+    "static/js/main.bcf37989.js"
   ]
 }
