@@ -22,12 +22,15 @@ body {
   font-family: $primary-font;
   color: $text-color;
   line-height: 1.5;
-  background-image: url('../assets/images/bgImg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: $tablet) {
+    background-image: url('../assets/images/bgImg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 img {
