@@ -12,6 +12,7 @@ import ButtonIcon from './ButtonIcon';
 import { ReactComponent as IconClose } from '../assets/images/icons/close.svg';
 import { animateScroll as scroll } from 'react-scroll';
 import { ToastContainer, toast } from 'react-toastify';
+import ScrollArrow from './ScrollArrow';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -160,6 +161,8 @@ export default class App extends Component {
           )}
           <ToastContainer autoClose={3000} position="top-center" />
         </Container>
+        <ScrollArrow type="down" />
+        <ScrollArrow type="up" />
       </div>
     );
   }

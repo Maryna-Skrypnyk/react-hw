@@ -38,7 +38,9 @@ export default class Modal extends Component {
 
     return createPortal(
       <div className={s.Overlay} onClick={this.handleOverlayClick}>
-        <div className={s.Modal}>{children}</div>
+        <div id="modal" className={s.Modal}>
+          {children}
+        </div>
       </div>,
       modalRoot,
     );
