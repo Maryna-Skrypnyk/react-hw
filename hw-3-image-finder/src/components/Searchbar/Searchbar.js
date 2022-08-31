@@ -38,6 +38,7 @@ export default class SearchBar extends Component {
           initialValues={{ searchQuery: '' }}
           validationSchema={this.validationSchema}
           onSubmit={this.onHandleSubmit}
+          validateOnBlur={false}
         >
           <Form className={s.SearchForm}>
             <button type="submit" className={s.button}>

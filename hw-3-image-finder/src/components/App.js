@@ -56,13 +56,15 @@ export default class App extends Component {
         .then(images => {
           if (images.length === 0) {
             if (nextPage !== 1) {
-              toast.warn(`No more images on your request "${nextSearchQuery}"`);
+              toast.warn(
+                `No more images on your request "${nextSearchQuery}"`,
+                { position: 'bottom-center' },
+              );
+            } else {
+              toast.error(
+                `There are no images on your request "${nextSearchQuery}"`,
+              );
             }
-            // else {
-            //   // toast.error(
-            //   //   `There are no images on your request "${nextSearchQuery}"`,
-            //   // );
-            // }
             this.setState({ showLoadMoreBtn: false });
           } else {
             this.setState({ showLoadMoreBtn: true });
