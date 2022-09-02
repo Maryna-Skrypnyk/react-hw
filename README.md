@@ -19,3 +19,11 @@
 ## [http-pokemon](http-pokemon)
 
 ## [homework-3-image-finder](hw-3-image-finder)
+
+## [hooks-1](hooks-1)
+
+## [hooks-2](hooks-2)
+
+## [phonebook-hooks](phonebook-hooks)
+
+## [img-finder-hooks](img-finder-hooks)
