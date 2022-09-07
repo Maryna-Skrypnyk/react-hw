@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/react-hw/static/css/main.f1d86913.css",
-    "main.js": "/react-hw/static/js/main.ad8130f2.js",
+    "main.css": "/react-hw/static/css/main.efb75f9d.css",
+    "main.js": "/react-hw/static/js/main.7858e08c.js",
     "static/media/Circe-Bold.woff": "/react-hw/static/media/Circe-Bold.30401a85fd2d86b1c587.woff",
     "static/media/Circe-Regular.woff": "/react-hw/static/media/Circe-Regular.0f1760c600b59a347aab.woff",
     "static/media/Poppins-Regular.woff": "/react-hw/static/media/Poppins-Regular.0cb0e08604d9c19c5c38.woff",
     "static/media/Poppins-Bold.woff": "/react-hw/static/media/Poppins-Bold.34b194b50abc612625a4.woff",
-    "static/media/bg-y-b.jpg": "/react-hw/static/media/bg-y-b.3fdb7e52c4bd469c5fbe.jpg",
-    "static/media/up-arrow.svg": "/react-hw/static/media/up-arrow.12cd8742396417d62f12034485b2ad91.svg",
+    "static/media/bgImg.jpg": "/react-hw/static/media/bgImg.3ab63c331070a43b2a8e.jpg",
+    "static/media/not-found.jpg": "/react-hw/static/media/not-found.6e728e80d2eeb7d5fe37.jpg",
     "index.html": "/react-hw/index.html",
-    "static/media/delete2.svg": "/react-hw/static/media/delete2.e4f8b5f0dafa9edf7af47a29a7430628.svg",
     "static/media/close.svg": "/react-hw/static/media/close.21a4936cc55a86a68b4e6e11e5cb63ac.svg",
-    "static/media/add.svg": "/react-hw/static/media/add.b32f3a092015d7a228e03084a624cb0b.svg",
-    "main.f1d86913.css.map": "/react-hw/static/css/main.f1d86913.css.map",
-    "main.ad8130f2.js.map": "/react-hw/static/js/main.ad8130f2.js.map"
+    "main.efb75f9d.css.map": "/react-hw/static/css/main.efb75f9d.css.map",
+    "main.7858e08c.js.map": "/react-hw/static/js/main.7858e08c.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1d86913.css",
-    "static/js/main.ad8130f2.js"
+    "static/css/main.efb75f9d.css",
+    "static/js/main.7858e08c.js"
   ]
 }
