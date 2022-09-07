@@ -38,8 +38,6 @@
 .btnAddContact {
   composes: btnDeleteContact;
 
-  display: flex;
-  justify-content: center;
   margin: 10px auto 20px;
   padding: 5px 10px;
 
@@ -49,6 +47,7 @@
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.02em;
+  line-height: normal;
   text-transform: uppercase;
 
   @include transition(color, background-color, box-shadow);

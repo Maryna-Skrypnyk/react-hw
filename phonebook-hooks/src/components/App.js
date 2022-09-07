@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer } from 'react-toastify';
 import { makeToastWarn } from './Notification/Notification';
 import ButtonIcon from './ButtonIcon';
+import ScrollTop from './ScrollTop';
 import { ReactComponent as AddIcon } from '../images/icons/add.svg';
 import { ReactComponent as CloseIcon } from '../images/icons/close.svg';
 import 'react-toastify/dist/ReactToastify.css';
@@ -90,7 +91,6 @@ const App = () => {
     <Layout>
       <Container>
         <Title primaryTitle="Phonebook" />
-
         <ButtonIcon
           onClick={toggleModal}
           btnClass="btnAddContact"
@@ -99,7 +99,6 @@ const App = () => {
           <AddIcon width="30" height="30" fill="currentColor" />
           Add contact
         </ButtonIcon>
-
         {showModal && (
           <Modal onClose={toggleModal}>
             {/* <ContactForm onSubmitForm={addContact} /> */}
@@ -113,15 +112,14 @@ const App = () => {
             </ButtonIcon>
           </Modal>
         )}
-
         <Title secondaryTitle="Contacts" />
-
         <Filter value={filter} onChange={filterChange} />
-
         <ContactList
           contacts={visibleContacts}
           onDeleteContact={deleteContact}
         />
+
+        <ScrollTop />
 
         <ToastContainer />
       </Container>
