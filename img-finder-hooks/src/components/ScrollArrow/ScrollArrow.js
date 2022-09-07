@@ -1,23 +1,41 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { throttle } from '../../utils/utils';
 import s from './ScrollArrow.module.scss';
 
-class ScrollArrow extends Component {
-  state = {
-    isArrowShown: false,
-  };
+const ScrollArrow = ({ type }) => {
+  const [isArrowShown, setIsArrowShown] = useState(false);
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.throttledScrollManager);
-  }
+  useEffect(() => {
+    const scrollManager = () => {
+      switch (type) {
+        case 'up':
+          setIsArrowShown(
+            window.pageYOffset > document.documentElement.clientHeight,
+          );
+          break;
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.throttledScrollManager);
-  }
+        case 'down':
+          setIsArrowShown(
+            window.pageYOffset + 2 * document.documentElement.clientHeight <
+              document.body.scrollHeight,
+          );
+          break;
+        default:
+      }
+    };
 
-  onArrowClick = () => {
-    switch (this.props.type) {
+    const throttledScrollManager = throttle(scrollManager, 500);
+
+    window.addEventListener('scroll', throttledScrollManager);
+
+    return () => {
+      window.removeEventListener('scroll', throttledScrollManager);
+    };
+  }, [type]);
+
+  const onArrowClick = () => {
+    switch (type) {
       case 'up':
         window.scrollTo({
           top: 0,
@@ -35,34 +53,12 @@ class ScrollArrow extends Component {
         break;
 
       default:
+        throw new Error('Unsupported scroll-arrow type');
     }
   };
 
-  scrollManager = () => {
-    switch (this.props.type) {
-      case 'up':
-        this.setState({
-          isArrowShown:
-            window.pageYOffset > document.documentElement.clientHeight,
-        });
-        break;
-
-      case 'down':
-        this.setState({
-          isArrowShown:
-            window.pageYOffset + 2 * document.documentElement.clientHeight <
-            document.body.scrollHeight,
-        });
-        break;
-
-      default:
-    }
-  };
-
-  throttledScrollManager = throttle(this.scrollManager, 500);
-
-  makeArrowStyles = () => {
-    switch (this.props.type) {
+  const makeArrowStyles = () => {
+    switch (type) {
       case 'up':
         return s.ArrowUp;
 
@@ -74,15 +70,13 @@ class ScrollArrow extends Component {
     }
   };
 
-  render() {
-    return this.state.isArrowShown ? (
-      <div className={this.makeArrowStyles()} onClick={this.onArrowClick}></div>
-    ) : null;
-  }
-}
-
-export default ScrollArrow;
+  return isArrowShown ? (
+    <div className={makeArrowStyles()} onClick={onArrowClick}></div>
+  ) : null;
+};
 
 ScrollArrow.propTypes = {
   type: PropTypes.oneOf(['up', 'down']).isRequired,
 };
+
+export default ScrollArrow;

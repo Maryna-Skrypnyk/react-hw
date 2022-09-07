@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import s from './LargeImage.module.scss';
 
 const LargeImage = ({ largeImageURL, tags }) => {

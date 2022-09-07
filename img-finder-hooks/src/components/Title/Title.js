@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import s from './Title.module.scss';
 
 const Title = ({ primaryTitle, secondaryTitle }) => {

@@ -1,7 +1,4 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import s from './ButtonIcon.module.scss';
 
 const ButtonIcon = ({ type, onClick, children, btnClass, ...allyProps }) => (
