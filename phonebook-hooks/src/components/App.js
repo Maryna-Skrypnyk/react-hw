@@ -59,19 +59,14 @@ const App = () => {
     setFilter(target.value);
   };
 
-  // useMemo для поверхневого порівняння значень станів, запобігає перерендеру при зміні станів, які не впливають на інші стани
-  // в даному випадку зміна стану відкриття\закриття модалки не повинна впливати на перерендер фільтрації при кожному тоглі модалки
-  const getVisibleContactsSortByName = useMemo(() => {
-    console.log('Фільтр контактів ' + Date.now());
+  const getVisibleContacts = () => {
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLocaleLowerCase().includes(normalizedFilter),
+    );
+  };
 
-    const getVisibleContacts = () => {
-      console.log('Фільтр контактів ' + Date.now());
-      const normalizedFilter = filter.toLowerCase();
-      return contacts.filter(contact =>
-        contact.name.toLocaleLowerCase().includes(normalizedFilter),
-      );
-    };
-
+  const getVisibleContactsSortByName = () => {
     const visibleContacts = getVisibleContacts();
 
     const visibleContactsSortByName = visibleContacts.sort((a, b) => {
@@ -88,7 +83,38 @@ const App = () => {
     });
 
     return visibleContactsSortByName;
-  }, [contacts, filter]);
+  };
+
+  // // useMemo для поверхневого порівняння значень станів, запобігає перерендеру при зміні станів, які не впливають на інші стани в синхронному коді
+  // // в даному випадку зміна стану відкриття\закриття модалки не повинна впливати на перерендер фільтрації при кожному тоглі модалки
+  // // має зміст при складних розрахунках з великим обсягом даних, при малих обсягах дана операція може вартувати дорожче в плані оптимізації
+  // const getVisibleContactsSortByName = useMemo(() => {
+  //   // console.log('Фільтр контактів ' + Date.now());
+  //   const getVisibleContacts = () => {
+  //     console.log('Фільтр контактів ' + Date.now());
+  //     const normalizedFilter = filter.toLowerCase();
+  //     return contacts.filter(contact =>
+  //       contact.name.toLocaleLowerCase().includes(normalizedFilter),
+  //     );
+  //   };
+
+  //   const visibleContacts = getVisibleContacts();
+
+  //   const visibleContactsSortByName = visibleContacts.sort((a, b) => {
+  //     const nameA = a.name.toUpperCase();
+  //     const nameB = b.name.toUpperCase();
+
+  //     if (nameA < nameB) {
+  //       return -1;
+  //     }
+  //     if (nameA > nameB) {
+  //       return 1;
+  //     }
+  //     return 0;
+  //   });
+
+  //   return visibleContactsSortByName;
+  // }, [contacts, filter]);
 
   return (
     <Layout>
@@ -118,7 +144,7 @@ const App = () => {
         <Title secondaryTitle="Contacts" />
         <Filter value={filter} onChange={filterChange} />
         <ContactList
-          contacts={getVisibleContactsSortByName}
+          contacts={getVisibleContactsSortByName()}
           onDeleteContact={deleteContact}
         />
 
