@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
+import Layout from './Layout';
 import Searchbar from './Searchbar';
 import Container from './Container';
 import Title from './Title';
@@ -16,7 +17,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import ScrollArrow from './ScrollArrow';
 import 'react-toastify/dist/ReactToastify.css';
 import imgAPI from '../services/images-api';
-import s from './App.module.scss';
 
 const Status = {
   IDLE: 'idle',
@@ -26,10 +26,10 @@ const Status = {
 };
 
 const App = () => {
-  const [images, setImages] = useLocalStorage('images', []);
+  // const [images, setImages] = useLocalStorage('images', []);
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
-  // const [images, setImages] = useState([]);
+  const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
   const [largeImageURL, setLargeImageURL] = useState('');
   const [tags, setTags] = useState('');
@@ -57,8 +57,7 @@ const App = () => {
           setShowLoadMoreBtn(true);
         }
 
-        setImages(images => [...images, ...newImages]);
-        setPage(page);
+        setImages(prevImages => [...prevImages, ...newImages]);
         setStatus(Status.RESOLVED);
       })
       .catch(error => {
@@ -66,7 +65,7 @@ const App = () => {
         setError(error);
         setStatus(Status.REJECTED);
       });
-  }, [searchQuery, page, setImages]);
+  }, [searchQuery, page]);
 
   const handleFormSubmit = newQuery => {
     if (newQuery === searchQuery) {
@@ -95,7 +94,6 @@ const App = () => {
   const onOpenImgModal = e => {
     setLargeImageURL(e.target.dataset.source);
     setTags(e.target.alt);
-
     toggleModal();
   };
 
@@ -105,7 +103,7 @@ const App = () => {
   };
 
   return (
-    <div className={s.App}>
+    <Layout>
       <Searchbar onSubmit={handleFormSubmit} />
       <Container>
         {status === Status.IDLE && (
@@ -121,6 +119,7 @@ const App = () => {
         {showLoadMoreBtn && (
           <Button contentBtn="Load More" onLoadMore={onLoadMore} />
         )}
+
         {showModal && (
           <Modal onClose={toggleModal}>
             <LargeImg largeImageURL={largeImageURL} tags={tags} />
@@ -137,7 +136,7 @@ const App = () => {
       </Container>
       <ScrollArrow type="down" />
       <ScrollArrow type="up" />
-    </div>
+    </Layout>
   );
 };
 

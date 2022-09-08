@@ -31,6 +31,36 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $img-background-light-color;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+    border: 0.2px solid $secondary-gray-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      rgb(142, 154, 218),
+      $sidebar-background-color
+    );
+    border-radius: 8px;
+    border: 1px solid $img-background-light-color;
+
+    @include transition(background);
+
+    &:hover {
+      background: linear-gradient(
+        to bottom,
+        $sidebar-background-color,
+        rgb(142, 154, 218)
+      );
+    }
+  }
 }
 
 img {

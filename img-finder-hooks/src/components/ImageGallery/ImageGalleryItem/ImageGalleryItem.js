@@ -9,6 +9,7 @@ const ImageGalleryItem = ({
   return (
     <li className={s.ImageGalleryItem}>
       <img
+        loading="lazy"
         src={webformatURL}
         alt={tags}
         className={s.ImageGalleryImage}
