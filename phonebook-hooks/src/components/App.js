@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Layout from './Layout';
 import Container from './Container';
@@ -59,14 +59,19 @@ const App = () => {
     setFilter(target.value);
   };
 
-  const getVisibleContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLocaleLowerCase().includes(normalizedFilter),
-    );
-  };
+  // useMemo для поверхневого порівняння значень станів, запобігає перерендеру при зміні станів, які не впливають на інші стани
+  // в даному випадку зміна стану відкриття\закриття модалки не повинна впливати на перерендер фільтрації при кожному тоглі модалки
+  const getVisibleContactsSortByName = useMemo(() => {
+    console.log('Фільтр контактів ' + Date.now());
 
-  const getVisibleContactsSortByName = () => {
+    const getVisibleContacts = () => {
+      console.log('Фільтр контактів ' + Date.now());
+      const normalizedFilter = filter.toLowerCase();
+      return contacts.filter(contact =>
+        contact.name.toLocaleLowerCase().includes(normalizedFilter),
+      );
+    };
+
     const visibleContacts = getVisibleContacts();
 
     const visibleContactsSortByName = visibleContacts.sort((a, b) => {
@@ -83,9 +88,7 @@ const App = () => {
     });
 
     return visibleContactsSortByName;
-  };
-
-  const visibleContacts = getVisibleContactsSortByName();
+  }, [contacts, filter]);
 
   return (
     <Layout>
@@ -115,7 +118,7 @@ const App = () => {
         <Title secondaryTitle="Contacts" />
         <Filter value={filter} onChange={filterChange} />
         <ContactList
-          contacts={visibleContacts}
+          contacts={getVisibleContactsSortByName}
           onDeleteContact={deleteContact}
         />
 
