@@ -39,7 +39,7 @@ const Modal = ({ onClose, children }) => {
         className={s.ModalContent}
         initial={{ top: '50%', left: '50%', x: '-50%', y: '-50%', scale: 0 }}
         exit={{ scale: 0 }}
-        transition={{ ease: 'easeOut', duration: 0.5 }}
+        transition={{ ease: 'easeOut', duration: 0.3 }}
         animate={{ scale: 1 }}
       >
         {children}
