@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
-
+import { motion } from 'framer-motion';
 import s from './ButtonIcon.module.scss';
 
 const ButtonIcon = ({ type, onClick, children, btnClass, ...allyProps }) => (
-  <button
+  <motion.button
     type={type}
     onClick={onClick}
     className={s[`${btnClass}`]}
     {...allyProps}
+    initial={{ scale: 0.5 }}
+    transition={{ ease: 'easeOut', duration: 0.3 }}
+    whileInView={{ scale: 1 }}
+    viewport={{ once: false }}
   >
     {children}
-  </button>
+  </motion.button>
 );
 
 ButtonIcon.defaultProps = {

@@ -24,32 +24,14 @@
   font-weight: 700;
 }
 
-// .svgDelete {
-//   width: 26px;
-//   height: 26px;
-//   margin-right: 5px;
+.iconDelete {
+  fill: $secondary-icon-fill-color;
+  @include transition(fill);
 
-//   &:hover .fillDelete,
-//   &:focus .fillDelete {
-//     fill: $primary-btn-bg-color;
-//   }
+  &:hover {
+    fill: $primary-btn-bg-color;
+  }
+}
 
-//   @media screen and (min-width: $tablet) {
-//     width: 28px;
-//     height: 28px;
-//   }
-// }
-
-// .fillDelete {
-//   fill: $img-background-yellow-color;
-
-//   &:hover,
-//   &:focus {
-//     fill: $primary-btn-bg-color;
-//   }
-
-//   .btnDeleteContact:hover &,
-//   .btnDeleteContact:focus & {
-//     fill: $primary-btn-bg-color;
-//   }
-// }
+// //
+// fill="#3dd9eb"
