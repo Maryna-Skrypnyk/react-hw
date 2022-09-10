@@ -43,7 +43,7 @@ const SecondaryTitle = ({ localization }) => {
   const { secondaryTitle } = localization.localizedContent;
   return (
     <>
-      {secondaryTitle && <h1 className={s.secondaryTitle}>{secondaryTitle}</h1>}
+      {secondaryTitle && <h2 className={s.secondaryTitle}>{secondaryTitle}</h2>}
     </>
   );
 };
