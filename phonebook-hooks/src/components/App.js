@@ -12,13 +12,11 @@ import FormFormic from './FormFormic';
 import Modal from './Modal';
 import ContactList from './ContactList';
 import Filter from './Filter';
-
 import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer } from 'react-toastify';
 import { makeToastWarn } from './Notification/Notification';
 import ButtonIconWithContent from './ButtonIconWithContent';
 import ButtonIcon from './ButtonIcon';
-
 import { ReactComponent as AddIcon } from '../images/icons/add.svg';
 import { ReactComponent as CloseIcon } from '../images/icons/close.svg';
 import 'react-toastify/dist/ReactToastify.css';
