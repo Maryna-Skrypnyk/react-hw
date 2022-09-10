@@ -1,8 +1,18 @@
 import PropTypes from 'prop-types';
+import withLocalization from '../hoc/withLocalization';
 import { motion } from 'framer-motion';
 import s from './ButtonIcon.module.scss';
 
-const ButtonIcon = ({ type, onClick, children, btnClass, ...allyProps }) => {
+const ButtonIcon = ({
+  localization,
+  type,
+  onClick,
+  children,
+  btnClass,
+  ...allyProps
+}) => {
+  const { contentBtn } = localization.localizedContent;
+
   return (
     <motion.button
       type={type}
@@ -15,7 +25,7 @@ const ButtonIcon = ({ type, onClick, children, btnClass, ...allyProps }) => {
       viewport={{ once: false }}
     >
       {children}
-      {/* {contentBtn} */}
+      {contentBtn}
     </motion.button>
   );
 };
@@ -33,4 +43,4 @@ ButtonIcon.propTypes = {
   'aria-label': PropTypes.string.isRequired,
 };
 
-export default ButtonIcon;
+export default withLocalization(ButtonIcon);

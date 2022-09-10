@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
+import withLocalization from '../hoc/withLocalization';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 
 import s from './Filter.module.scss';
 
-const Filter = ({ value, onChange }) => {
+const Filter = ({ value, onChange, localization }) => {
   const filterInputId = uuidv4();
+
+  const { titleFilter, namePlaceholder } = localization.localizedContent;
 
   return (
     <motion.div
@@ -17,7 +20,7 @@ const Filter = ({ value, onChange }) => {
       viewport={{ once: false }}
     >
       <label htmlFor={filterInputId} className={s.label}>
-        Find contacts by name
+        {titleFilter}
       </label>
       <motion.input
         id={filterInputId}
@@ -25,10 +28,7 @@ const Filter = ({ value, onChange }) => {
         name="name"
         value={value}
         onChange={onChange}
-        placeholder="Enter name"
-        // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        // title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-        // required
+        placeholder={namePlaceholder}
         className={s.input}
         initial={{ scale: 0 }}
         exit={{ scale: 0 }}
@@ -44,4 +44,4 @@ Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-export default Filter;
+export default withLocalization(Filter);

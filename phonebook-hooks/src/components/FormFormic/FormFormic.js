@@ -1,10 +1,27 @@
 import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import withLocalization from '../hoc/withLocalization';
+import Button from '../Button';
 import * as Yup from 'yup';
 
 import s from './FormFormic.module.scss';
 
-const FormFormic = ({ onSubmitForm }) => {
+const FormFormic = ({ onSubmitForm, localization }) => {
+  const {
+    contentBtn,
+    name,
+    number,
+    namePlaceholder,
+    numberPlaceholder,
+    required,
+    minCharacterName,
+    maxCharacterName,
+    notSpaces,
+    validNumber,
+    minCharacterNumber,
+    maxCharacterNumber,
+  } = localization.localizedContent;
+
   const onHandleSubmit = ({ name, number }, { resetForm }) => {
     onSubmitForm({ name, number });
     resetForm({ name: '', number: '' });
@@ -12,19 +29,16 @@ const FormFormic = ({ onSubmitForm }) => {
 
   const validationSchema = Yup.object({
     name: Yup.string()
-      .trim('cannot include leading and trailing spaces')
-      .min(2, 'at least 2 charater')
-      .max(40, 'must be 40 characters or less')
-      .required('name is required'),
+      .trim(notSpaces)
+      .min(2, minCharacterName)
+      .max(40, maxCharacterName)
+      .required(required),
     number: Yup.string()
-      .trim('cannot include leading and trailing spaces')
-      .matches(
-        /^[+]{0,1}[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s/0-9]*$/,
-        'enter valid phone number',
-      )
-      .min(8, 'at least 8 charater')
-      .max(18, 'must be 18 characters or less')
-      .required('number is required'),
+      .trim(notSpaces)
+      .matches(/^[+]{0,1}[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s/0-9]*$/, validNumber)
+      .min(8, minCharacterNumber)
+      .max(18, maxCharacterNumber)
+      .required(required),
   });
 
   return (
@@ -36,27 +50,26 @@ const FormFormic = ({ onSubmitForm }) => {
     >
       <Form className={s.form}>
         <label htmlFor="name" className={s.label}>
-          Name
+          {name}
         </label>
         <Field
           id="name"
           name="name"
           type="text"
           className={s.input}
-          placeholder="Enter name"
+          placeholder={namePlaceholder}
           autoFocus
         />
         <ErrorMessage component="span" name="name" className={s.errorName} />
-
         <label htmlFor="number" className={s.label}>
-          Number
+          {number}
         </label>
         <Field
           id="number"
           name="number"
           type="tel"
           className={s.input}
-          placeholder="Enter phone number"
+          placeholder={numberPlaceholder}
         />
         <ErrorMessage
           component="span"
@@ -64,9 +77,9 @@ const FormFormic = ({ onSubmitForm }) => {
           className={s.errorNumber}
         />
 
-        <button type="submit" className={s.button}>
-          Add contact
-        </button>
+        <Button type="submit" btnClass="button">
+          {contentBtn}
+        </Button>
       </Form>
     </Formik>
   );
@@ -76,4 +89,4 @@ FormFormic.propTypes = {
   onSubmitForm: PropTypes.func.isRequired,
 };
 
-export default FormFormic;
+export default withLocalization(FormFormic);
