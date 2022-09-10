@@ -6,7 +6,7 @@
   "phoneNumber": "Номер",
   "numberPlaceholder": "Введіть номер телефону",
   "contentBtn": "Додати контакт",
-  "titleFilter": "Пошук контактів по імені",
+  "titleFilter": "Пошук контактів за іменем",
   "required": "поле обов'язкове",
   "minCharacterName": "не менше 2 символів",
   "maxCharacterName": "не більше 40 символів",
