@@ -9,8 +9,8 @@ import s from './FormFormic.module.scss';
 const FormFormic = ({ onSubmitForm, localization }) => {
   const {
     contentBtn,
-    name,
-    number,
+    contactName,
+    phoneNumber,
     namePlaceholder,
     numberPlaceholder,
     required,
@@ -50,7 +50,7 @@ const FormFormic = ({ onSubmitForm, localization }) => {
     >
       <Form className={s.form}>
         <label htmlFor="name" className={s.label}>
-          {name}
+          {contactName}
         </label>
         <Field
           id="name"
@@ -62,7 +62,7 @@ const FormFormic = ({ onSubmitForm, localization }) => {
         />
         <ErrorMessage component="span" name="name" className={s.errorName} />
         <label htmlFor="number" className={s.label}>
-          {number}
+          {phoneNumber}
         </label>
         <Field
           id="number"

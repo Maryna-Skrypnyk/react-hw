@@ -7,7 +7,6 @@ import s from './Filter.module.scss';
 
 const Filter = ({ value, onChange, localization }) => {
   const filterInputId = uuidv4();
-
   const { titleFilter, namePlaceholder } = localization.localizedContent;
 
   return (

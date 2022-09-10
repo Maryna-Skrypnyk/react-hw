@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import ContactItem from './ContactItem';
+import withLocalization from '../hoc/withLocalization';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import s from './ContactList.module.scss';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const ContactList = ({ contacts, onDeleteContact, localization }) => {
+  const { noContacts } = localization.localizedContent;
+
   return (
     <>
       {contacts.length === 0 && (
@@ -14,7 +17,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          There are no contacts in the list
+          {noContacts}
         </motion.p>
       )}
       <ul className={s.contactList}>
@@ -45,4 +48,4 @@ ContactList.propTypes = {
   ).isRequired,
 };
 
-export default ContactList;
+export default withLocalization(ContactList);

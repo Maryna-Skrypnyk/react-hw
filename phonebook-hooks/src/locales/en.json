@@ -1,9 +1,9 @@
 {
   "primaryTitle": "Phonebook",
   "secondaryTitle": "Contacts",
-  "name": "Name",
+  "contactName": "Name",
   "namePlaceholder": "Enter name",
-  "number": "Number",
+  "phoneNumber": "Number",
   "numberPlaceholder": "Enter phone number",
   "contentBtn": "Add contact",
   "titleFilter": "Find contacts by name",
@@ -13,5 +13,7 @@
   "minCharacterNumber": "at least 8 charater",
   "maxCharacterNumber": "must be 18 characters or less",
   "notSpaces": "cannot include leading and trailing spaces",
-  "validNumber": "not valid phone number"
+  "validNumber": "not valid phone number",
+  "noContacts": "There are no contacts in the list",
+  "isContact": "is already in contacts"
 }

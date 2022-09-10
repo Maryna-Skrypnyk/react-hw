@@ -3,7 +3,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import Layout from './Layout';
 import ScrollUp from './ScrollUp';
 import Container from './Container';
-import LocalizationContext from '../context/localization';
+import withLocalization from './hoc/withLocalization';
 import LocaleSelector from './LocaleSelector';
 import Title from './Title';
 import { AnimatePresence } from 'framer-motion';
@@ -21,7 +21,9 @@ import { ReactComponent as AddIcon } from '../images/icons/add.svg';
 import { ReactComponent as CloseIcon } from '../images/icons/close.svg';
 import 'react-toastify/dist/ReactToastify.css';
 
-const App = () => {
+const App = ({ localization }) => {
+  const { isContact, phoneNumber, contactName } = localization.localizedContent;
+
   const [contacts, setContacts] = useLocalStorage('contacts', []);
   // const [filter, setFilter] = useState('');
   const [filter, setFilter] = useLocalStorage('filter', '');
@@ -39,12 +41,12 @@ const App = () => {
     };
 
     if (contacts.find(contact => contact.name === name)) {
-      makeToastWarn(`${name} is already in contacts`, 'warn');
+      makeToastWarn(`${contactName} ${name} ${isContact}`, 'warn');
       return;
     }
 
     if (contacts.find(contact => contact.number === number)) {
-      makeToastWarn(`Number ${number} is already in contacts`, 'warn');
+      makeToastWarn(`${phoneNumber} ${number} ${isContact}`, 'warn');
       return;
     }
     setContacts(prevContacts => [contact, ...prevContacts]);
@@ -52,7 +54,6 @@ const App = () => {
   };
 
   const toggleModal = () => {
-    console.log('Тогл модалки ' + Date.now());
     setShowModal(!showModal);
   };
 
@@ -96,7 +97,6 @@ const App = () => {
   const getVisibleContactsSortByName = useMemo(() => {
     // console.log('Фільтр контактів ' + Date.now());
     const getVisibleContacts = () => {
-      // console.log('Фільтр контактів ' + Date.now());
       const normalizedFilter = filter.toLowerCase();
       return contacts.filter(contact =>
         contact.name.toLocaleLowerCase().includes(normalizedFilter),
@@ -124,43 +124,43 @@ const App = () => {
   return (
     <Layout>
       <Container>
-        <LocalizationContext>
-          <ScrollUp />
-          <LocaleSelector />
-          <Title.PrimaryTitle />
-          <ButtonIconWithContent
-            onClick={toggleModal}
-            btnClass="btnAddContact"
-            aria-label="Add contact"
-          >
-            <AddIcon width="30" height="30" fill="currentColor" />
-          </ButtonIconWithContent>
-          <AnimatePresence>
-            {showModal && (
-              <Modal onClose={toggleModal}>
-                {/* <ContactForm onSubmitForm={addContact} /> */}
-                <FormFormic onSubmitForm={addContact} />
-                <ButtonIcon
-                  onClick={toggleModal}
-                  btnClass="btnCloseModal"
-                  aria-label="Close modal"
-                >
-                  <CloseIcon width="32" height="32" fill="currentColor" />
-                </ButtonIcon>
-              </Modal>
-            )}
-          </AnimatePresence>
-          <Title.SecondaryTitle />
-          <Filter value={filter} onChange={filterChange} />
-          <ContactList
-            contacts={getVisibleContactsSortByName}
-            onDeleteContact={deleteContact}
-          />
-          <ToastContainer />
-        </LocalizationContext>
+        {/* <LocalizationContext> */}
+        <ScrollUp />
+        <LocaleSelector />
+        <Title.PrimaryTitle />
+        <ButtonIconWithContent
+          onClick={toggleModal}
+          btnClass="btnAddContact"
+          aria-label="Add contact"
+        >
+          <AddIcon width="30" height="30" fill="currentColor" />
+        </ButtonIconWithContent>
+        <AnimatePresence>
+          {showModal && (
+            <Modal onClose={toggleModal}>
+              {/* <ContactForm onSubmitForm={addContact} /> */}
+              <FormFormic onSubmitForm={addContact} />
+              <ButtonIcon
+                onClick={toggleModal}
+                btnClass="btnCloseModal"
+                aria-label="Close modal"
+              >
+                <CloseIcon width="32" height="32" fill="currentColor" />
+              </ButtonIcon>
+            </Modal>
+          )}
+        </AnimatePresence>
+        <Title.SecondaryTitle />
+        <Filter value={filter} onChange={filterChange} />
+        <ContactList
+          contacts={getVisibleContactsSortByName}
+          onDeleteContact={deleteContact}
+        />
+        <ToastContainer />
+        {/* </LocalizationContext> */}
       </Container>
     </Layout>
   );
 };
 
-export default App;
+export default withLocalization(App);
