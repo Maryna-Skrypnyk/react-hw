@@ -77,7 +77,7 @@ const FormFormic = ({ onSubmitForm, localization }) => {
           className={s.errorNumber}
         />
 
-        <Button type="submit" btnClass="button">
+        <Button type="submit" btnClass="button" aria-label="Add contact">
           {contentBtn}
         </Button>
       </Form>

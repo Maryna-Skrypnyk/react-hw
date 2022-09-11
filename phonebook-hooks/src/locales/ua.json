@@ -6,14 +6,14 @@
   "phoneNumber": "Номер",
   "numberPlaceholder": "Введіть номер телефону",
   "contentBtn": "Додати контакт",
-  "titleFilter": "Пошук контактів за іменем",
+  "titleFilter": "Пошук контактів по імені",
   "required": "поле обов'язкове",
   "minCharacterName": "не менше 2 символів",
   "maxCharacterName": "не більше 40 символів",
   "minCharacterNumber": "не менше 8 символів",
   "maxCharacterNumber": "не більше 18 символів",
   "notSpaces": "не може включати пробіли напочатку та вкінці",
-  "validNumber": "не валідний номер телефону",
+  "validNumber": "невалідний номер телефону",
   "noContacts": "Відсутні контакти в списку",
-  "isContact": "уже є серед контактів"
+  "isContact": "вже існує у списку контактів"
 }

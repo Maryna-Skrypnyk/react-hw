@@ -32,3 +32,23 @@
     min-width: 150px;
   }
 }
+
+.buttonLocale {
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 24px;
+  margin: 0 4px;
+  background-color: #2196f3; // #424242;
+  color: #ffffff;
+  @include transition(background-color);
+}
+
+.activeLocale {
+  composes: buttonLocale;
+
+  background-color: $primary-btn-bg-color; // #2196f3;
+}

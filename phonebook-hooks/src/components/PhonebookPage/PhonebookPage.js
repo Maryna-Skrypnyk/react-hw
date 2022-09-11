@@ -42,12 +42,12 @@ const PhonebookPage = ({ localization }) => {
     };
 
     if (contacts.find(contact => contact.name === name)) {
-      makeToastWarn(`${contactName} ${name} ${isContact}`, 'warn');
+      makeToastWarn(`${contactName} "${name}" ${isContact}`, 'warn');
       return;
     }
 
     if (contacts.find(contact => contact.number === number)) {
-      makeToastWarn(`${phoneNumber} ${number} ${isContact}`, 'warn');
+      makeToastWarn(`${phoneNumber} "${number}" ${isContact}`, 'warn');
       return;
     }
     setContacts(prevContacts => [contact, ...prevContacts]);

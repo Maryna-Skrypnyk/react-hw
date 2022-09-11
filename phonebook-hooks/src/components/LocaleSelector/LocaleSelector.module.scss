@@ -1,5 +1,3 @@
-@import '../../styles/index.scss';
-
 .selector {
   display: flex;
   justify-content: center;
@@ -18,22 +16,4 @@
   //   top: 10px;
   //   right: 20px;
   // }
-}
-
-.button {
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 2px;
-  padding: 4px 24px;
-  margin: 0 4px;
-  background-color: #2196f3; // #424242;
-  color: #ffffff;
-}
-
-.active {
-  composes: button;
-  background-color: $primary-btn-bg-color; // #2196f3;
 }
