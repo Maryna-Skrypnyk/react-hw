@@ -1,12 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import Layout from '../Layout';
-import ScrollUp from '../ScrollUp';
-import Container from '../Container';
 import MainTitle from '../MainTitle';
 import SecondaryTitle from '../SecondaryTitle';
 import withLocalization from '../hoc/withLocalization';
-import LocaleSelector from '../LocaleSelector';
 import { AnimatePresence } from 'framer-motion';
 // import ContactForm from './ContactForm';
 import FormFormic from '../FormFormic';
@@ -14,17 +10,14 @@ import Modal from '../Modal';
 import ContactList from '../ContactList';
 import Filter from '../Filter';
 import { v4 as uuidv4 } from 'uuid';
-import { ToastContainer } from 'react-toastify';
 import { makeToastWarn } from '../Notification/notification';
 import ButtonIconWithContent from '../ButtonIconWithContent';
 import ButtonIcon from '../ButtonIcon';
 import { ReactComponent as AddIcon } from '../../images/icons/add.svg';
 import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
-import 'react-toastify/dist/ReactToastify.css';
 
 const PhonebookPage = ({ localization }) => {
   const { isContact, phoneNumber, contactName } = localization.localizedContent;
-
   const [contacts, setContacts] = useLocalStorage('contacts', []);
   // const [filter, setFilter] = useState('');
   const [filter, setFilter] = useLocalStorage('filter', '');
@@ -123,44 +116,37 @@ const PhonebookPage = ({ localization }) => {
   }, [contacts, filter]);
 
   return (
-    <Layout>
-      <Container>
-        {/* <LocalizationContext> */}
-        <ScrollUp />
-        <LocaleSelector />
-        <MainTitle />
-        <ButtonIconWithContent
-          onClick={toggleModal}
-          btnClass="btnAddContact"
-          aria-label="Add contact"
-        >
-          <AddIcon width="30" height="30" fill="currentColor" />
-        </ButtonIconWithContent>
-        <AnimatePresence>
-          {showModal && (
-            <Modal onClose={toggleModal}>
-              {/* <ContactForm onSubmitForm={addContact} /> */}
-              <FormFormic onSubmitForm={addContact} />
-              <ButtonIcon
-                onClick={toggleModal}
-                btnClass="btnCloseModal"
-                aria-label="Close modal"
-              >
-                <CloseIcon width="32" height="32" fill="currentColor" />
-              </ButtonIcon>
-            </Modal>
-          )}
-        </AnimatePresence>
-        <SecondaryTitle />
-        <Filter value={filter} onChange={filterChange} />
-        <ContactList
-          contacts={getVisibleContactsSortByName}
-          onDeleteContact={deleteContact}
-        />
-        <ToastContainer />
-        {/* </LocalizationContext> */}
-      </Container>
-    </Layout>
+    <>
+      <MainTitle />
+      <ButtonIconWithContent
+        onClick={toggleModal}
+        btnClass="btnAddContact"
+        aria-label="Add contact"
+      >
+        <AddIcon width="30" height="30" fill="currentColor" />
+      </ButtonIconWithContent>
+      <AnimatePresence>
+        {showModal && (
+          <Modal onClose={toggleModal}>
+            {/* <ContactForm onSubmitForm={addContact} /> */}
+            <FormFormic onSubmitForm={addContact} />
+            <ButtonIcon
+              onClick={toggleModal}
+              btnClass="btnCloseModal"
+              aria-label="Close modal"
+            >
+              <CloseIcon width="32" height="32" fill="currentColor" />
+            </ButtonIcon>
+          </Modal>
+        )}
+      </AnimatePresence>
+      <SecondaryTitle />
+      <Filter value={filter} onChange={filterChange} />
+      <ContactList
+        contacts={getVisibleContactsSortByName}
+        onDeleteContact={deleteContact}
+      />
+    </>
   );
 };
 
