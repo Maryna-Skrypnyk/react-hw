@@ -1,0 +1,37 @@
+@import '../../../styles/index.scss';
+
+.contactItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.contact {
+  display: inline;
+  font-size: 16px;
+
+  @media screen and (min-width: $medium) {
+    font-size: 18px;
+  }
+}
+
+.contactName {
+  font-weight: 700;
+}
+
+.iconDelete {
+  fill: $secondary-icon-fill-color;
+  @include transition(fill);
+
+  &:hover {
+    fill: $primary-btn-bg-color;
+  }
+}
+
+// //
+// fill="#3dd9eb"

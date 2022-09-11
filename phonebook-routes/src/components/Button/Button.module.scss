@@ -1,0 +1,57 @@
+@import '../../styles/index.scss';
+
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  min-width: 120px;
+  background-color: $primary-btn-bg-color;
+  color: $white-color;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: $primary-duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $secondary-btn-accent-color;
+    background-color: $white-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  @media screen and (min-width: $medium) {
+    min-width: 150px;
+  }
+}
+
+.buttonLocale {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  margin: 0 4px;
+
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+
+  background-color: #2196f3; // #424242;
+  color: #ffffff;
+  @include transition(background-color);
+}
+
+.activeLocale {
+  composes: buttonLocale;
+
+  background-color: $primary-btn-bg-color; // #2196f3;
+}
