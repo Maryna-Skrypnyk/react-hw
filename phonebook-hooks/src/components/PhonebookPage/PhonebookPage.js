@@ -3,9 +3,10 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 import Layout from '../Layout';
 import ScrollUp from '../ScrollUp';
 import Container from '../Container';
+import MainTitle from '../MainTitle';
+import SecondaryTitle from '../SecondaryTitle';
 import withLocalization from '../hoc/withLocalization';
 import LocaleSelector from '../LocaleSelector';
-import Title from '../Title';
 import { AnimatePresence } from 'framer-motion';
 // import ContactForm from './ContactForm';
 import FormFormic from '../FormFormic';
@@ -127,7 +128,7 @@ const PhonebookPage = ({ localization }) => {
         {/* <LocalizationContext> */}
         <ScrollUp />
         <LocaleSelector />
-        <Title.PrimaryTitle />
+        <MainTitle />
         <ButtonIconWithContent
           onClick={toggleModal}
           btnClass="btnAddContact"
@@ -150,7 +151,7 @@ const PhonebookPage = ({ localization }) => {
             </Modal>
           )}
         </AnimatePresence>
-        <Title.SecondaryTitle />
+        <SecondaryTitle />
         <Filter value={filter} onChange={filterChange} />
         <ContactList
           contacts={getVisibleContactsSortByName}
