@@ -1,22 +1,31 @@
 import React from 'react';
 import withLocalization from '../../components/hoc/withLocalization';
+import Title from '../../components/Title';
 import phonebookIcon from '../../images/phone-book.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import s from './HomePage.module.scss';
 
 const HomePage = ({ localization }) => {
-  const { greeting, appTarget, signUp, logIn, appAction } =
-    localization.localizedContent;
+  const {
+    greeting,
+    appTarget,
+    signUp,
+    logIn,
+    appAction,
+    actionPress,
+    logOut,
+    outAppAction,
+  } = localization.localizedContent;
 
   return (
     <div className={s.homePage}>
-      <h1 className={s.title}>
-        {greeting}{' '}
+      <Title primaryTitle={greeting} titleClass="titleGreeting">
+        {' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
-      </h1>
+      </Title>
 
       <p className={s.iconPhonebook}>
         {appTarget}{' '}
@@ -25,9 +34,15 @@ const HomePage = ({ localization }) => {
         </span>
       </p>
 
+      {/* {isLoggedIn && ( */}
+      {/* <p className={s.iconPhonebookAct}>
+        {actionPress} <span className={s.act}>{logOut}</span> {outAppAction}.
+      </p> */}
+      {/* )} */}
+
       {/* {!isLoggedIn && ( */}
       <p className={s.iconPhonebookAct}>
-        <span className={s.act}>{signUp}</span> /{' '}
+        {actionPress} <span className={s.act}>{signUp}</span> /{' '}
         <span className={s.act}>{logIn}</span> {appAction}.
       </p>
       {/* )} */}

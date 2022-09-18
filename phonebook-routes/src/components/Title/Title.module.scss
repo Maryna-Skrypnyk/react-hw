@@ -1,0 +1,30 @@
+@import '../../styles/index.scss';
+
+.primaryTitle {
+  padding: 10px;
+  font-family: $secondary-font;
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.secondaryTitle {
+  padding: 10px;
+  font-family: $secondary-font;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.titleGreeting {
+  padding: 0;
+  color: $white-color;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 35px;
+  }
+}

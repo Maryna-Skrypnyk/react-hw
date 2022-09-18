@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import MainTitle from '../../components/MainTitle';
-import SecondaryTitle from '../../components/SecondaryTitle';
+import Title from '../../components/Title';
 import withLocalization from '../../components/hoc/withLocalization';
 import { AnimatePresence } from 'framer-motion';
 // import ContactForm from './ContactForm';
@@ -17,7 +16,8 @@ import { ReactComponent as AddIcon } from '../../images/icons/add.svg';
 import { ReactComponent as CloseIcon } from '../../images/icons/close.svg';
 
 const PhonebookPage = ({ localization }) => {
-  const { isContact, phoneNumber, contactName } = localization.localizedContent;
+  const { isContact, phoneNumber, contactName, primaryTitle, secondaryTitle } =
+    localization.localizedContent;
   const [contacts, setContacts] = useLocalStorage('contacts', []);
   // const [filter, setFilter] = useState('');
   const [filter, setFilter] = useLocalStorage('filter', '');
@@ -117,7 +117,7 @@ const PhonebookPage = ({ localization }) => {
 
   return (
     <>
-      <MainTitle />
+      <Title primaryTitle={primaryTitle} titleClass="primaryTitle" />
       <ButtonIconWithContent
         onClick={toggleModal}
         btnClass="btnAddContact"
@@ -140,7 +140,7 @@ const PhonebookPage = ({ localization }) => {
           </Modal>
         )}
       </AnimatePresence>
-      <SecondaryTitle />
+      <Title secondaryTitle={secondaryTitle} titleClass="secondaryTitle" />
       <Filter value={filter} onChange={filterChange} />
       <ContactList
         contacts={getVisibleContactsSortByName}

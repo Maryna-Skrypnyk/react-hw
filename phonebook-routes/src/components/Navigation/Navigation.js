@@ -9,7 +9,7 @@ const Navigation = ({ localization }) => {
       <ul className={s.navList}>
         <li className={s.navListItem}>
           <NavLink
-            to="home"
+            to="/"
             className={({ isActive }) => {
               return isActive ? s.navLinkActive : s.navLink;
             }}

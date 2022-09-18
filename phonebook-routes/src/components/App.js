@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import LocalizationContext from '../context/localization';
 import Layout from './Layout';
 import Container from './Container';
@@ -18,8 +18,10 @@ const App = () => {
           <ScrollUp />
 
           <Routes>
-            <Route path="home" element={<HomePage />} />
+            <Route index element={<HomePage />} />
+            {/* <Route path="home" element={<HomePage />} /> */}
             <Route path="contacts" element={<PhonebookPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
 
           <ToastContainer />

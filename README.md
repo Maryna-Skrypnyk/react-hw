@@ -27,3 +27,13 @@
 ## [phonebook-hooks](phonebook-hooks)
 
 ## [img-finder-hooks](img-finder-hooks)
+
+## [phonebook-routes](phonebook-routes)
+
+## [routing](routing)
+
+## [routing-v5-books](routing-v5-books)
+
+## [route-splitting](route-splitting)
+
+## [slug-location-state](slug-location-state)
