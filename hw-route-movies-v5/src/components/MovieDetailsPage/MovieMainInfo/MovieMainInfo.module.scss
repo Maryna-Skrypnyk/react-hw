@@ -1,0 +1,64 @@
+.MovieMainInfo {
+  padding-bottom: 15px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.MovieTitle {
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.MovieContent {
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 0 0 30px;
+  }
+}
+
+.ImageURL {
+  display: block;
+  min-width: 290px;
+  max-width: 290px;
+  // width: 290px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+  @media screen and (min-width: 768px) {
+    margin: 0 0 10px 0;
+  }
+}
+
+.MovieScore,
+.MovieTitleName,
+.MovieOverview {
+  margin-top: 0;
+}
+
+.MovieGenreList {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.MovieGenreItem:not(:last-child) {
+  //   margin-left: 0;
+  margin-right: 8px;
+  border-right: 1px solid gray;
+  padding-right: 8px;
+}
+
+.Line {
+  background-color: gray;
+}

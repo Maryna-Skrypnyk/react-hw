@@ -1,0 +1,54 @@
+@import './breakpoints';
+@import './fonts';
+@import './variables';
+@import './mixins';
+
+body {
+  margin: 0;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Circe', 'Segoe UI', 'Roboto',
+  //   'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+
+  font-family: $primary-font;
+  background-color: $img-background-yellow-color;
+  background-image: url(../assets/images/bg-y-b.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: $text-color;
+  line-height: 1.5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
