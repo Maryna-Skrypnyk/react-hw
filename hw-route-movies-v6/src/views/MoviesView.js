@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 import moviesAPI from '../api/movies-api';
 import Searchbar from '../components/Searchbar';
 import MoviesList from '../components/MoviesList';
 import Button from '../components/Button';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Error from '../components/Error';
-
 import { animateScroll as scroll } from 'react-scroll';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function MoviesPage() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const [movies, setMovies] = useState([]);
@@ -63,7 +61,8 @@ export default function MoviesPage() {
     setSearchQuery(searchQuery);
     updateStates();
 
-    history.push({ ...location, search: `movie=${searchQuery}` });
+    // history.push({ ...location, search: `movie=${searchQuery}` });
+    navigate({ ...location, search: `movie=${searchQuery}` });
   };
 
   const updateStates = () => {

@@ -1,11 +1,17 @@
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import { Watch } from 'react-loader-spinner';
 import styles from './LoaderSpinner.module.scss';
 
 const LoaderSpinner = () => (
-  <div className={styles.LoaderSpinner}>
-    <Loader type="Watch" color="#00BFFF" height={100} width={100} timeout={0} />
-  </div>
+  <Watch
+    height="100"
+    width="100"
+    radius="48"
+    color="#00BFFF"
+    ariaLabel="watch-loading"
+    // wrapperStyle={{}}
+    wrapperClassName={styles.LoaderSpinner}
+    visible={true}
+  />
 );
 
 export default LoaderSpinner;

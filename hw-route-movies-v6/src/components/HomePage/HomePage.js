@@ -9,7 +9,7 @@ import { animateScroll as scroll } from 'react-scroll';
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
   const [moviesPageList, setMoviesPageList] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(3);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -39,6 +39,8 @@ export default function HomePage() {
     setPage(prevPage => prevPage + 1);
     scroll.scrollToBottom();
   };
+
+  // console.log(movies);
 
   return (
     <>

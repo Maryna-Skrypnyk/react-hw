@@ -1,9 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function PageHeading({ text }) {
+const PageHeading = ({ text }) => {
   return <h1>{text}</h1>;
-}
+};
 
 PageHeading.defaultProps = {
   text: '',
@@ -12,3 +11,5 @@ PageHeading.defaultProps = {
 PageHeading.propTypes = {
   text: PropTypes.string,
 };
+
+export default PageHeading;

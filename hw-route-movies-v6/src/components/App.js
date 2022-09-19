@@ -1,8 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
+import { Routes, Route, Navigate } from 'react-router-dom';
+import AppLayout from './AppLayout';
 import Layout from './Layout';
-import AppBar from './AppBar';
 import LoaderSpinner from './LoaderSpinner';
 import BackTopScroll from './BackTopScroll';
 
@@ -23,31 +22,30 @@ const MovieDetailsView = lazy(() =>
 
 export default function App() {
   return (
-    <>
-      <AppBar />
-      <Layout>
-        <BackTopScroll />
-        <Suspense fallback={<LoaderSpinner />}>
-          <Switch>
-            <Route path="/" exact>
-              <HomeView />
+    <Layout>
+      <BackTopScroll />
+      <Suspense fallback={<LoaderSpinner />}>
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route path="/" element={<HomeView />}></Route>
+
+            <Route path="movies" element={<MoviesView />}>
+              <Route path=":movieId" element={<MovieDetailsView />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
 
-            <Route path="/movies/:movieId">
-              <MovieDetailsView />
-            </Route>
-
-            <Route path="/movies">
-              <MoviesView />
-            </Route>
-
-            <Route>
-              <NotFoundView />
-              <Redirect to="/" />
-            </Route>
-          </Switch>
-        </Suspense>
-      </Layout>
-    </>
+            <Route
+              path="*"
+              element={
+                <>
+                  <NotFoundView />
+                  <Navigate to="/" replace />
+                </>
+              }
+            />
+          </Route>
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 }

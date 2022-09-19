@@ -1,32 +1,18 @@
-import ScrollToTop from 'react-scroll-up';
-import { FaArrowUp } from 'react-icons/fa';
+import ScrollToTop from 'react-scroll-to-top';
+import { ReactComponent as ArrowUp } from '../../assets/images/upArrow.svg';
+import styles from './BackTopScroll.module.scss';
 
-export default function BackTopScroll() {
+const BackTopScroll = () => {
   return (
-    <ScrollToTop
-      showUnder={160}
-      style={{
-        position: 'fixed',
-        bottom: 20,
-        right: 20,
-        cursor: 'pointer',
-        transitionDuration: '0.2s',
-        transitionTimingFunction: 'linear',
-        transitionDelay: '0s',
-        // backgroundColor: '#2196f3',
-        backgroundColor: 'rgba(33,150,243,0.8)',
-        borderRadius: '50%',
-        padding: 15,
-        width: 44,
-        height: 44,
-        scrollBehavior: 'smooth',
-      }}
-    >
-      <FaArrowUp
-        style={{
-          color: 'white',
-        }}
+    <>
+      <div />
+      <ScrollToTop
+        className={styles.ScrollToUp}
+        component={<ArrowUp className={styles.iconArrow} />}
+        smooth
       />
-    </ScrollToTop>
+    </>
   );
-}
+};
+
+export default BackTopScroll;

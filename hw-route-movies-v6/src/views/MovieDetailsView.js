@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useHistory, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import moviesAPI from '../api/movies-api';
 
 import MovieMainInfo from '../components/MovieDetailsPage/MovieMainInfo';
@@ -12,7 +12,7 @@ import Error from '../components/Error';
 import styles from '../components/MovieDetailsPage/MovieDetailsPage.module.scss';
 
 export default function MovieDetailsPage() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const { movieId } = useParams();
@@ -37,7 +37,8 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   const onGoBack = () => {
-    history.push(location?.state?.from ?? '/');
+    // history.push(location?.state?.from ?? '/');
+    navigate(location?.state?.from ?? '/', { replace: true });
   };
 
   return (

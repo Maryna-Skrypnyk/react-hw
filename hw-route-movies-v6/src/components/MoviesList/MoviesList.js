@@ -1,9 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import MoviesListItem from '../MovieListItem/MovieListItem';
+import MoviesListItem from '../MovieListItem';
 import styles from './MoviesList.module.scss';
 
-export default function MoviesList({ movies }) {
+const MoviesList = ({ movies }) => {
   return (
     <ul className={styles.MoviesList}>
       {movies.map(({ id, original_title, title }) => (
@@ -16,12 +15,17 @@ export default function MoviesList({ movies }) {
       ))}
     </ul>
   );
-}
-
-MoviesList.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  ),
 };
+
+// MoviesList.propTypes = {
+//   movies: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }),
+//   ),
+// };
+MoviesList.propTypes = {
+  movies: PropTypes.array.isRequired,
+};
+
+export default MoviesList;

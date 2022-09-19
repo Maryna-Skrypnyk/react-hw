@@ -1,8 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
-import NoPhoto from '../../../../../images/noImage.png';
-
+import NoPhoto from '../../../../../assets/images/noImage.png';
 import styles from './CastListItem.module.scss';
 
 export default function Cast({ original_name, character, profile_path }) {
