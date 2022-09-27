@@ -17,7 +17,7 @@ const fetchSearchMovies = async (searchQuery, page) => {
   }
 };
 
-const fetchTrendingMovies = async page => {
+const fetchTrendingMovies = async (page = 1) => {
   try {
     const { data } = await axios.get('/trending/movie/day', {
       params: { page },
@@ -31,6 +31,7 @@ const fetchTrendingMovies = async page => {
 const fetchMovieById = async movie_id => {
   try {
     const { data } = await axios.get(`/movie/${movie_id}`);
+    // console.log(data);
     return data;
   } catch (error) {
     return null;
@@ -64,3 +65,5 @@ const moviesAPI = {
 };
 
 export default moviesAPI;
+
+////////////////

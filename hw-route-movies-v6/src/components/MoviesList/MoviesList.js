@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import MoviesListItem from '../MovieListItem';
+import MovieListItem from '../MovieListItem';
 import styles from './MoviesList.module.scss';
 
 const MoviesList = ({ movies }) => {
   return (
     <ul className={styles.MoviesList}>
-      {movies.map(({ id, original_title, title }) => (
-        <MoviesListItem
+      {movies.map(({ id, title, original_title }) => (
+        <MovieListItem
           key={id}
           id={id}
           title={title}
@@ -17,13 +17,6 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-// MoviesList.propTypes = {
-//   movies: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.number.isRequired,
-//     }),
-//   ),
-// };
 MoviesList.propTypes = {
   movies: PropTypes.array.isRequired,
 };

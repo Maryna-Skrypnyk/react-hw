@@ -14,9 +14,12 @@ const AppLayout = () => {
           {/* </div> */}
         </Container>
       </header>
-      <Container>
-        <Outlet />
-      </Container>
+
+      <main>
+        <Container>
+          <Outlet />
+        </Container>
+      </main>
 
       <footer>
         <Container>

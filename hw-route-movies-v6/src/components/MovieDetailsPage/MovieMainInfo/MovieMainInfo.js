@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import noImage from '../../../assets/images/noImg.jpg';
 import styles from './MovieMainInfo.module.scss';
 
-export default function MovieMainInfo({ movie }) {
-  // const titleMovie = movie.title === "" || !movie.title ? movie.original_title : movie.title;
-  const titleMovie = movie.title || movie.original_title;
+const MovieMainInfo = ({ movie }) => {
+  const titleMovie =
+    movie.title === '' || !movie.title ? movie.original_title : movie.title;
+  // const titleMovie = movie.title || movie.original_title;
   return (
     <>
       <div className={styles.MovieMainInfo}>
@@ -54,7 +55,7 @@ export default function MovieMainInfo({ movie }) {
       <hr className={styles.Line} />
     </>
   );
-}
+};
 
 MovieMainInfo.defaultProps = {
   title: '',
@@ -80,3 +81,5 @@ MovieMainInfo.propTypes = {
   ),
   popularity: PropTypes.number,
 };
+
+export default MovieMainInfo;

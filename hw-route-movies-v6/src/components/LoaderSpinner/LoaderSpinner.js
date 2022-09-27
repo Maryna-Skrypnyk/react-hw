@@ -8,7 +8,12 @@ const LoaderSpinner = () => (
     radius="48"
     color="#00BFFF"
     ariaLabel="watch-loading"
-    // wrapperStyle={{}}
+    wrapperStyle={{
+      position: 'fixed',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+    }}
     wrapperClassName={styles.LoaderSpinner}
     visible={true}
   />

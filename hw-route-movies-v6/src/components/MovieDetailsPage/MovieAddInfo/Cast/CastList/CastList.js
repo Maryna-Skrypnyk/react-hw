@@ -1,15 +1,11 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import CastListItem from '../CastListItem';
-
 import styles from './CastList.module.scss';
 
-export default function CastList({ actors }) {
+export default function CastList({ cast }) {
   return (
     <ul className={styles.CastList}>
-      {actors.map(({ credit_id, original_name, character, profile_path }) => (
+      {cast?.map(({ credit_id, original_name, character, profile_path }) => (
         <CastListItem
           key={credit_id}
           credit_id={credit_id}
@@ -23,11 +19,11 @@ export default function CastList({ actors }) {
 }
 
 CastList.defaultProps = {
-  actors: [],
+  cast: [],
 };
 
 CastList.propTypes = {
-  actors: PropTypes.arrayOf(
+  cast: PropTypes.arrayOf(
     PropTypes.shape({
       credit_id: PropTypes.string.isRequired,
     }),

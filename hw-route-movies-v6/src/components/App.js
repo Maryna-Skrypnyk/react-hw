@@ -4,6 +4,8 @@ import AppLayout from './AppLayout';
 import Layout from './Layout';
 import LoaderSpinner from './LoaderSpinner';
 import BackTopScroll from './BackTopScroll';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomeView = lazy(() =>
   import('../views/HomeView.js' /* webpackChunkName: "home-view" */),
@@ -20,20 +22,30 @@ const MovieDetailsView = lazy(() =>
   ),
 );
 
+const CastView = lazy(() =>
+  import('../views/CastView' /* webpackChunkName: "movie-details-view-cast" */),
+);
+
+const ReviewsView = lazy(() =>
+  import(
+    '../views/ReviewsView' /* webpackChunkName: "movie-details-view-reviews" */
+  ),
+);
+
 export default function App() {
   return (
     <Layout>
       <BackTopScroll />
       <Suspense fallback={<LoaderSpinner />}>
         <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route path="/" element={<HomeView />}></Route>
-
-            <Route path="movies" element={<MoviesView />}>
-              <Route path=":movieId" element={<MovieDetailsView />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="" element={<AppLayout />}>
+            <Route index element={<HomeView />} />
+            <Route path="home" element={<Navigate to="/" replace />} />
+            <Route path="movies" element={<MoviesView />} />
+            <Route path="movies/:movieId" element={<MovieDetailsView />}>
+              <Route path="cast" element={<CastView />} />
+              <Route path="reviews" element={<ReviewsView />} />
             </Route>
-
             <Route
               path="*"
               element={
@@ -46,6 +58,7 @@ export default function App() {
           </Route>
         </Routes>
       </Suspense>
+      <ToastContainer />
     </Layout>
   );
 }

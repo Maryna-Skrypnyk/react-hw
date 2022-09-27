@@ -7,19 +7,25 @@ import Button from '../components/Button';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Error from '../components/Error';
 import { animateScroll as scroll } from 'react-scroll';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
-export default function MoviesPage() {
+const Status = {
+  IDLE: 'idle',
+  PENDING: 'pending',
+  RESOLVED: 'resolved',
+  REJECTED: 'rejected',
+};
+
+const MoviesView = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const [movies, setMovies] = useState([]);
-  const [moviesPageList, setMoviesPageList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(false);
+  const [status, setStatus] = useState(Status.IDLE);
 
   useEffect(() => {
     if (location.search === '') {
@@ -30,46 +36,54 @@ export default function MoviesPage() {
   }, [location.search]);
 
   useEffect(() => {
-    if (!searchQuery) {
-      return;
-    }
+    if (!searchQuery) return;
+    setStatus(Status.PENDING);
 
-    const fetchMoviesList = async () => {
-      try {
-        setLoading(true);
-        const moviesPageList = await moviesAPI.fetchSearchMovies(
-          searchQuery,
-          page,
-        );
-        setMoviesPageList(moviesPageList);
-        setMovies(prevMovies => [...prevMovies, ...moviesPageList]);
-        setLoading(false);
-
-        if (moviesPageList.length === 0) {
-          setError(`There are no movies on your request "${searchQuery}"`);
+    moviesAPI
+      .fetchSearchMovies(searchQuery, page)
+      .then(newMovies => {
+        if (newMovies.length === 0) {
+          if (page !== 1) {
+            toast.warn(`No more movies on your request "${searchQuery}"`, {
+              position: 'bottom-center',
+            });
+          } else {
+            toast.error(
+              `There are no movies on your request "${searchQuery}"`,
+              {
+                position: 'top-center',
+              },
+            );
+          }
+          setShowLoadMoreBtn(false);
+        } else {
+          setShowLoadMoreBtn(true);
         }
-      } catch (error) {
-        setError('Whoops, something went wrong. Enter your request again');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchMoviesList();
+        setMovies(prevMovies => [...prevMovies, ...newMovies]);
+        setStatus(Status.RESOLVED);
+      })
+      .catch(error => {
+        toast.error(error.message);
+        setError(error);
+        setStatus(Status.REJECTED);
+      });
   }, [searchQuery, page]);
 
-  const handleSearchQuerySubmit = searchQuery => {
-    setSearchQuery(searchQuery);
-    updateStates();
+  const handleSearchQuerySubmit = newQuery => {
+    if (newQuery === searchQuery) {
+      loadMore();
+      return;
+    }
+    setSearchQuery(newQuery);
+    resetStates();
 
-    // history.push({ ...location, search: `movie=${searchQuery}` });
-    navigate({ ...location, search: `movie=${searchQuery}` });
+    navigate({ ...location, search: `movie=${newQuery}` });
   };
 
-  const updateStates = () => {
+  const resetStates = () => {
     setMovies([]);
     setPage(1);
     setError(null);
-    setMoviesPageList([]);
   };
 
   const loadMore = () => {
@@ -81,21 +95,20 @@ export default function MoviesPage() {
     <>
       <Searchbar handleSubmit={handleSearchQuerySubmit} />
 
-      {error && <Error errorContent={error} />}
+      {status === Status.PENDING && <LoaderSpinner />}
+      {status === Status.REJECTED && <Error errorContent={error} />}
+      {status === Status.RESOLVED && <MoviesList movies={movies} />}
+      {status === Status.RESOLVED && movies.length === 0 && (
+        <Error
+          errorContent={`There are no movies on your request "${searchQuery}"`}
+        />
+      )}
 
-      {loading && <LoaderSpinner />}
-
-      {movies.length > 0 && !error && <MoviesList movies={movies} />}
-
-      {moviesPageList.length > 19 && !loading && !error && (
+      {showLoadMoreBtn && (
         <Button contentBtn="Load More" onLoadMore={loadMore} />
       )}
-      {moviesPageList.length < 19 &&
-        moviesPageList.length > 0 &&
-        !loading &&
-        !error && <Button disabled contentBtn="End" />}
-
-      <ToastContainer autoClose={3000} />
     </>
   );
-}
+};
+
+export default MoviesView;
