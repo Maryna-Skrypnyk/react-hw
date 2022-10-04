@@ -41,3 +41,13 @@
 ## [hw-route-movies-v5](hw-route-movies-v5)
 
 ## [hw-route-movies-v6](hw-route-movies-v6)
+
+## [redux-vanilla-18](redux-vanilla-18)
+
+## [redux-toolkit-18](redux-toolkit-18)
+
+## [redux-toolkit-hooks-21](redux-toolkit-hooks-21)
+
+## [redux-async-18](redux-async-18)
+
+## [redux-async-21](redux-async-21)
